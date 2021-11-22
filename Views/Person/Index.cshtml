@@ -1,0 +1,43 @@
+@model IEnumerable<NetCore.Models.Person>
+
+@{
+    ViewData["Title"] = "Person";
+}
+
+<h1>Danh sách</h1>
+<h4>Lớp Cha của Sinh Viên</h4>
+<div>Tại đây hiển thị tất cả các đối tượng đã được thêm ở Sinh viên</div>
+<br>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CCCD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.CCCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CCCD">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CCCD">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CCCD">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
