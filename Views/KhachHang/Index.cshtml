@@ -10,6 +10,13 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="KhachHang" asp-action="Index">
+    <p>
+        Tìm kiếm: <input type="text" name="SearchString" />
+        <input type="submit" value="Tìm" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

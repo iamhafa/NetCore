@@ -34,7 +34,7 @@ namespace NetCore.Controllers
 
         if (!string.IsNullOrEmpty(SearchString))
         {
-            movies = movies.Where(s => s.Title.Contains(SearchString));
+            movies = movies.Where(s => s.Title.ToLower().Contains(SearchString.ToLower()));
         }
 
         if (!string.IsNullOrEmpty(movieGenre))

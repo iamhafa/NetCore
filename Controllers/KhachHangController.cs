@@ -20,9 +20,17 @@ namespace NetCore.Controllers
         }
 
         // GET: KhachHang
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.KhachHang.ToListAsync());
+            var khachhangs = from k in _context.KhachHang
+                            select k;
+
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                khachhangs = khachhangs.Where(s => s.TenKhachHang.ToLower().Contains(searchString.ToLower()));
+            }
+
+            return View(await khachhangs.ToListAsync());
         }
 
         // GET: KhachHang/Details/5
