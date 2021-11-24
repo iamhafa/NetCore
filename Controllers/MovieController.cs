@@ -20,10 +20,36 @@ namespace NetCore.Controllers
         }
 
         // GET: Movie
-        public async Task<IActionResult> Index()
+        // GET: Movies
+    public async Task<IActionResult> Index(string movieGenre, string SearchString)
+    {
+        // sử dụng LinQ để select ra Genre.
+        IQueryable<string> genreQuery = from m in _context.Movie
+                                        orderby m.Genre
+                                        select m.Genre;
+
+        // sử dụng LinQ để select ra danh sách bản ghi Movie trong database.
+        var movies = from m in _context.Movie
+                    select m;
+
+        if (!string.IsNullOrEmpty(SearchString))
         {
-            return View(await _context.Movie.ToListAsync());
+            movies = movies.Where(s => s.Title.Contains(SearchString));
         }
+
+        if (!string.IsNullOrEmpty(movieGenre))
+        {
+            movies = movies.Where(x => x.Genre == movieGenre);
+        }
+
+        var movieGenreVM = new MovieGenreViewModel
+        {
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+            Movies = await movies.ToListAsync()
+        };
+        
+        return View(movieGenreVM);
+    }
 
         // GET: Movie/Details/5
         public async Task<IActionResult> Details(int? id)
