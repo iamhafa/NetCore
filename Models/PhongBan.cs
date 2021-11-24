@@ -8,7 +8,9 @@ namespace NetCore.Models
     public class PhongBan
     {
         [Key]
+        [Display(Name ="ID Phòng ban")]
         public string PhongBanID { get; set; }
+        [Display(Name ="Tầng làm việc")]
         public string TangLamViec { get; set; }
         public ICollection<NhanVien> NhanViens {get; set;}
     }

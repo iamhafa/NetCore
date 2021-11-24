@@ -56,11 +56,16 @@ namespace NetCore.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("KhachHangID,TenKhachHang,SoDienThoai")] KhachHang khachHang)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(khachHang);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+            try{
+                if (ModelState.IsValid)
+                    {
+                        _context.Add(khachHang);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+            }
+            catch (Exception ex){
+                ModelState.AddModelError("", "Khóa chính bị trùng hoặc có lỗi " + ex);
             }
             return View(khachHang);
         }

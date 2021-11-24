@@ -8,9 +8,12 @@ namespace NetCore.Models
     public class NhanVien
     {
         [Key]
+        [Display(Name ="Tên nhân viên")]
         public string TenNhanVien { get; set; }
-        public string PhongBanID { get; set; }
+        [Display(Name ="Chức vụ")]
         public string ChucVu { get; set; }
+        [Display(Name ="ID Phòng ban")]
+        public string PhongBanID { get; set; }
         public PhongBan PhongBan { get; set; }
     }
 }

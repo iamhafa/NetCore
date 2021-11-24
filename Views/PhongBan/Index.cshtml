@@ -24,11 +24,12 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TangLamViec)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.PhongBanID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TangLamViec)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PhongBanID">Edit</a> |

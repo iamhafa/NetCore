@@ -9,7 +9,11 @@ namespace NetCore.Models
     {
         [Key]
         public int KhachHangID { get; set; }
+        [Display(Name ="Tên Khách hàng")]
         public string TenKhachHang { get; set; }
+
+        [Required(ErrorMessage = "Không được để trống")]
+        [Display(Name ="Số điện thoại")]
         public int SoDienThoai { get; set; }
         public ICollection<HoaDon> HoaDons {get; set;}
     }

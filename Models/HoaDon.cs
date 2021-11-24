@@ -10,7 +10,8 @@ namespace NetCore.Models
         [Key]
         public string HoaDonID { get; set; }
         public int KhachHangID { get; set; }
-        public DateTime NgayTao { get; set; }
+        [Display(Name ="Ngày tạo hóa đơn")]
+        public DateTime? NgayTao { get; set; }
         public KhachHang KhachHang { get; set; }
     }
 }
