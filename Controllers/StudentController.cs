@@ -22,12 +22,18 @@ namespace NetCore.Controllers
         // GET: Student
         public async Task<IActionResult> Index(string universityName, string searchString)
         {
+            // searchString là tìm theo địa chỉ
+            // univerSityname là select theo tên trường ĐH
+
+            // sử dụng LinQ để lấy danh sách tên trường ĐH trong database
             IQueryable<string> universityQuery = from m in _context.Student
                                                     orderby m.University
                                                     select m.University;
+
+            // sử dụng LinQ để select danh sách các bản ghi Student trong database
             var sinhviens = from m in _context.Student
                                 select m;
-
+            // nếu ô tìm kiếm địa chỉ không trống thì trả ra kết quả
             if(!String.IsNullOrEmpty(searchString)){
                 sinhviens = sinhviens.Where(s => s.Address.ToLower().Contains(searchString));
             }
@@ -41,7 +47,7 @@ namespace NetCore.Controllers
                 Universitys = new SelectList(await universityQuery.Distinct().ToListAsync()),
                 Students = await sinhviens.ToListAsync()
             };
-
+            
             return View(universityVM);
         }
 
@@ -74,7 +80,7 @@ namespace NetCore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("University,MaSinhVien,Address,CCCD,FullName")] Student student)
+        public async Task<IActionResult> Create([Bind("University,MaSinhVien,Address,CCCD,FullName,Major")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +112,7 @@ namespace NetCore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("University,MaSinhVien,Address,CCCD,FullName")] Student student)
+        public async Task<IActionResult> Edit(string id, [Bind("University,MaSinhVien,Address,CCCD,FullName,Major")] Student student)
         {
             if (id != student.CCCD)
             {

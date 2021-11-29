@@ -14,10 +14,12 @@
 <form asp-controller="Student" asp-action="Index" method="get">
     <p>
         <select asp-for="universityName" asp-items="Model.Universitys">
+            @* Universitys là "public SelectList Universitys" ở UniversityViewModel *@
             <option value="">Tất cả</option>
         </select>
         
         Tìm địa chỉ: <input type="text" asp-for="SearchString" />
+        @* SearchString là tìm theo tên địa chỉ *@
         <input type="submit" value="Tìm" />
     </p>
 </form>
@@ -28,16 +30,16 @@
                 @Html.DisplayNameFor(model => model.Students[0].CCCD)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Students[1].FullName)
+                @Html.DisplayNameFor(model => model.Students[0].FullName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Students[2].University)
+                @Html.DisplayNameFor(model => model.Students[0].University)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Students[3].MaSinhVien)
+                @Html.DisplayNameFor(model => model.Students[0].MaSinhVien)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Students[4].Address)
+                @Html.DisplayNameFor(model => model.Students[0].Address)
             </th>
             
             <th></th>
