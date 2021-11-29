@@ -20,9 +20,29 @@ namespace NetCore.Controllers
         }
 
         // GET: Student
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string universityName, string searchString)
         {
-            return View(await _context.Student.ToListAsync());
+            IQueryable<string> universityQuery = from m in _context.Student
+                                                    orderby m.University
+                                                    select m.University;
+            var sinhviens = from m in _context.Student
+                                select m;
+
+            if(!String.IsNullOrEmpty(searchString)){
+                sinhviens = sinhviens.Where(s => s.Address.ToLower().Contains(searchString));
+            }
+
+            if(!String.IsNullOrEmpty(universityName)){
+                sinhviens = sinhviens.Where(x => x.University == universityName);
+            }
+
+            var universityVM = new UniversityViewModel
+            {
+                Universitys = new SelectList(await universityQuery.Distinct().ToListAsync()),
+                Students = await sinhviens.ToListAsync()
+            };
+
+            return View(universityVM);
         }
 
         // GET: Student/Details/5

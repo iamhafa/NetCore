@@ -22,6 +22,7 @@ namespace NetCore.Controllers
         // GET: KhachHang
         public async Task<IActionResult> Index(string searchString)
         {
+            //sử dụng LinQ select dánh sách các bản ghi KhachHang trong database
             var khachhangs = from k in _context.KhachHang
                             select k;
 
@@ -29,7 +30,7 @@ namespace NetCore.Controllers
             {
                 khachhangs = khachhangs.Where(s => s.TenKhachHang.ToLower().Contains(searchString.ToLower()));
             }
-
+            //trả về list KhachHang với điều kiện TenKhachHang có chứa từ khóa tìm kiếm (bất đồng bộ)
             return View(await khachhangs.ToListAsync());
         }
 

@@ -1,4 +1,4 @@
-@model IEnumerable<NetCore.Models.Student>
+@model NetCore.Models.UniversityViewModel
 
 @{
     ViewData["Title"] = "Sinh Viên";
@@ -11,31 +11,40 @@
 <p>
     <a asp-action="Create">+Thêm Sinh viên</a>
 </p>
-
+<form asp-controller="Student" asp-action="Index" method="get">
+    <p>
+        <select asp-for="universityName" asp-items="Model.Universitys">
+            <option value="">Tất cả</option>
+        </select>
+        
+        Tìm địa chỉ: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Tìm" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CCCD)
+                @Html.DisplayNameFor(model => model.Students[0].CCCD)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
+                @Html.DisplayNameFor(model => model.Students[1].FullName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.University)
+                @Html.DisplayNameFor(model => model.Students[2].University)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaSinhVien)
+                @Html.DisplayNameFor(model => model.Students[3].MaSinhVien)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.Students[4].Address)
             </th>
             
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Students) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CCCD)
