@@ -20,6 +20,7 @@ namespace NetCore.Data
         public DbSet<NetCore.Models.KhachHang> KhachHang { get; set; }
         public DbSet<NhanVien> NhanViens { get; set;}
         public DbSet<NetCore.Models.PhongBan> PhongBan { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
 

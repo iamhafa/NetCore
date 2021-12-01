@@ -202,3 +202,8 @@ C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\NhanVien\Delete.cshtml.g.cs
 C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\NhanVien\Details.cshtml.g.cs
 C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\NhanVien\Edit.cshtml.g.cs
 C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\NhanVien\Index.cshtml.g.cs
+C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
+C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
+C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
+C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
+C:\.NetCore\NetCore\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs

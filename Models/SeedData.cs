@@ -5,7 +5,7 @@ using NetCore.Models;
 using System;
 using System.Linq;
 
-namespace MvcMovie.Models
+namespace NetCore.Models
 {
     public static class SeedData
     {

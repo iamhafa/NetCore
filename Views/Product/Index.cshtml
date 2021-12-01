@@ -1,0 +1,59 @@
+@model IEnumerable<NetCore.Models.Product>
+
+@{
+    ViewData["Title"] = "Sản phẩm";
+}
+
+<h1>Sản phẩm</h1>
+<h6>Sinh mã IDProduct tự động "SP001"=></h6>
+<p>
+    <a asp-action="Create">+Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IDProduct">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IDProduct">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDProduct">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

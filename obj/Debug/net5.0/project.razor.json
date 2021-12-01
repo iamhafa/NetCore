@@ -15734,8 +15734,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Product\\Edit.cshtml",
+      "TargetPath": "Views\\Product\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\KhachHang\\Create.cshtml",
       "TargetPath": "Views\\KhachHang\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Product\\Details.cshtml",
+      "TargetPath": "Views\\Product\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Product\\Delete.cshtml",
+      "TargetPath": "Views\\Product\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15751,6 +15766,11 @@
     {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\PhongBan\\Index.cshtml",
       "TargetPath": "Views\\PhongBan\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Product\\Index.cshtml",
+      "TargetPath": "Views\\Product\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15791,6 +15811,11 @@
     {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\NhanVien\\Edit.cshtml",
       "TargetPath": "Views\\NhanVien\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Product\\Create.cshtml",
+      "TargetPath": "Views\\Product\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
