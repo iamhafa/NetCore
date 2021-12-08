@@ -16,6 +16,31 @@ namespace NetCore.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.12");
 
+            modelBuilder.Entity("NetCore.Models.Exam", b =>
+                {
+                    b.Property<string>("SubjectID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Class")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PointOfStudent")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StudentName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SubjectName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SubjectType")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SubjectID");
+
+                    b.ToTable("Exams");
+                });
+
             modelBuilder.Entity("NetCore.Models.HoaDon", b =>
                 {
                     b.Property<string>("HoaDonID")
@@ -58,29 +83,23 @@ namespace NetCore.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18, 2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Rating")
-                        .IsRequired()
-                        .HasMaxLength(5)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("NetCore.Models.NhanVien", b =>

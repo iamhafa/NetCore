@@ -15639,6 +15639,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Exam\\Delete.cshtml",
+      "TargetPath": "Views\\Exam\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Exam\\Create.cshtml",
+      "TargetPath": "Views\\Exam\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\Person\\Details.cshtml",
       "TargetPath": "Views\\Person\\Details.cshtml",
       "FileKind": "mvc"
@@ -15656,6 +15666,16 @@
     {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Exam\\Edit.cshtml",
+      "TargetPath": "Views\\Exam\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Exam\\Index.cshtml",
+      "TargetPath": "Views\\Exam\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15831,6 +15851,11 @@
     {
       "FilePath": "c:\\.NetCore\\NetCore\\Views\\Movie\\Details.cshtml",
       "TargetPath": "Views\\Movie\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\.NetCore\\NetCore\\Views\\Exam\\Details.cshtml",
+      "TargetPath": "Views\\Exam\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -15,6 +15,7 @@
             <div class="form-group">
                 <label asp-for="IDProduct" class="control-label"></label>
                 <input asp-for="IDProduct" class="form-control" value="@ViewBag.ProductKey" readonly/>
+                                                            @* readonly (Chỉ được xem, k được sửa) *@
                 <span asp-validation-for="IDProduct" class="text-danger"></span>
             </div>
             <div class="form-group">

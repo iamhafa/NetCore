@@ -50,7 +50,11 @@ namespace NetCore.Controllers
             // trả về danh sách Products trong database
             var model = _context.Products.ToList();
             // nếu chưa có dữ liệu => tự tạo ra mã "SP001"
-            if(model.Count() == 0) ViewBag.ProductKey = "SP001";
+            if(model.Count() == 0)
+            {
+                ViewBag.ProductKey = "SP001";
+                // ProductKey này sẽ sử dụng tại Views
+            }
             // nếu đã có
             else{
                 // lấy ra bản ghi mới nhất của Product
